@@ -5,106 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte de visite</title>
     <style>
+        /* Styles généraux */
+        body {
+            line-height: 2;
+        }
         h1 b {
             font-size: 80px;
-            text-shadow: 3px 3px  #00cc66;
+            text-shadow: 3px 3px #00cc66;
             position: relative;
             animation-name: example;
             animation-duration: 9s;
             animation-iteration-count: infinite;
-            }
-
-            @keyframes example {
-            0%   {left:0px;}
-            25%  { left:200px;}
-            75%  {left:0px;}
-            }
-        h2{
+        }
+        @keyframes example {
+            0% { left: 0px; }
+            25% { left: 200px; }
+            75% { left: 0px; }
+        }
+        h2 {
             font-size: 40px;
             font-family: serif;
         }
-        div.mon-photos img{
+        .mon-photos img {
             float: right;
-            border-radius: 20;
+            border-radius: 20px;
         }
-        div.langue-matrnel{
-            transform: rotate(-20deg); /* Standard syntax */
+        .langue-matrnel {
+            transform: rotate(-20deg);
         }
         #customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 25%;
-  height: 100%;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-nav ul li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-nav ul li a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-nav ul li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-/* espaces sur les footer */
-span.espace {
-    padding-right: 30%;
-}
-body{
-    line-height: 2;
-}
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        #customers tr:nth-child(even) { background-color: #f2f2f2; }
+        #customers tr:hover { background-color: #ddd; }
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            height: 100%;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+        nav ul li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        nav ul li a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        nav ul li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+        span.espace {
+            padding-right: 30%;
+        }
+        
+        /* Styles pour les petits écrans */
+        @media only screen and (max-width: 720px) {
+            h1 b {
+                font-size: 40px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            nav ul {
+                display: none; /* Masquer le menu par défaut */
+                width: 100%;
+            }
+            nav ul li a {
+                padding: 12px 16px;
+            }
+            .mon-photos img {
+                float: none;
+                display: block;
+                margin: 0 auto;
+            }
+            .container {
+                margin-left: 0;
+                padding: 10px;
+            }
+            .menu-icon {
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                text-align: center;
+            }
+        }
+        
+        /* Icône de menu par défaut masquée sur les grands écrans */
+        .menu-icon {
+            display: none;
+        }
     </style>
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </head>
 <body>
+    <!-- Icône de menu pour les petits écrans -->
+    <div class="menu-icon" onclick="toggleMenu()">☰ Menu</div>
+    
+    <!-- Navigation -->
     <nav>
         <ul>
-          <li><a class="active" href="#titre">Home</a></li>
-          <li><a href="#identite">Identité</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#formation">Formation et diplôme</a></li>
-          <li><a href="#Experiences">Experiences et pratique pendant l'etude</a></li>
-          <li><a href="#langue">Connaissances Languistiques</a></li>
-          <li><a href="#ltr">bas</a></li>
+            <li><a class="active" href="#titre">Home</a></li>
+            <li><a href="#identite">Identité</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#formation">Formation et diplôme</a></li>
+            <li><a href="#Experiences">Experiences et pratique pendant l'etude</a></li>
+            <li><a href="#langue">Connaissances Languistiques</a></li>
+            <li><a href="#ltr">Bas</a></li>
         </ul>
     </nav>
-    <p><center><h1 id="titre"><b>CARTE DE VISITE</b></h1></center></p>
     
-    <div style="margin-left:25%;padding:1px 16px;">
-        <div class="mon-photos"><img src="mon-photos.jpg" width="200" height="200" alt="" class="rounded"></div>
+    <!-- Contenu principal -->
+    <div class="container" style="margin-left:25%;padding:1px 16px;">
+        <p><center><h1 id="titre"><b>CARTE DE VISITE</b></h1></center></p>
+        <div class="mon-photos">
+            <img src="mon-photos.jpg" width="200" height="200" alt="" class="rounded">
+        </div>
         <div class="identite">
             <h2 id="identite">Identité</h2>
             <div class="nom">Nom et Prénom : ANDRIANANDRASANA Nomeniony Samuël</div>
@@ -112,93 +157,97 @@ body{
             <div class="nationalite">Nationalité : MALAGASY</div>
             <div class="situation-matrimonial">Situation Matrimonial : Célibataire</div>
         </div>
-        
-
         <div class="contact">
-                <h2 id="contact">Contact</h2>
+            <h2 id="contact">Contact</h2>
             <div class="num-phon">Numéro de téléphone : +261 34 52 240 36 ou +261 32 61 506 38</div>
             <div class="watsapp">WatsApp : +261 34 52 240 36 <a href="https://wa.me/+261345224036"><button type="submit">Discuter sur WhatsApp</button></a></div>
-            <div class="e-mail">E_mail :  anomenionysamuel@gmail.com  <a href="mailto:anomenionysamuel@gmail.com?subject=Sujet de l'Email&body=Bonjour, ceci est le test d'email"><button type="submit">Envoyer un courrier</button></a></div>
+            <div class="e-mail">E_mail : anomenionysamuel@gmail.com  <a href="mailto:anomenionysamuel@gmail.com?subject=Sujet de l'Email&body=Bonjour, ceci est le test d'email"><button type="submit">Envoyer un courrier</button></a></div>
         </div>
-        <div class="formation"><h2 id="formation">Formation et diplôme</h2></div>
-        <table id="customers">
-            <tr>
-                <th>Année scolaire</th>
-                <th>Diplôme et attestation obtenue</th>
-            </tr>
-            <tr>
-                <td>2023 - 2024</td>
-                <td>1 <sup>ère</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT</td>
-            </tr>
-            <tr>
-                <td>2022 -2023</td>
-                <td><a href="diplome-licence.jpg">Diplôme Licence Professionnel en Informatique à l’EMIT</a></td>
-            </tr>
-            <tr>
-                <td>2021 -2022</td>
-                <td>2 <sup>éme</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT</td>
-            </tr>
-            <tr>
-                <td>2019 - 2020</td>
-                <td>1 <sup>ére</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT</td>
-            </tr>
-            <tr>
-                <td>2018 - 2019</td>
-                <td><a href="diplomeBacc.png">Diplôme BACC Série D</a></td>
-            </tr>
-        </table>
+        <div class="formation">
+            <h2 id="formation">Formation et diplôme</h2>
+            <table id="customers">
+                <tr>
+                    <th>Année scolaire</th>
+                    <th>Diplôme et attestation obtenue</th>
+                </tr>
+                <tr>
+                    <td>2023 - 2024</td>
+                    <td>1 <sup>ère</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT</td>
+                </tr>
+                <tr>
+                    <td>2022 -2023</td>
+                    <td><a href="diplome-licence.jpg">Diplôme Licence Professionnel en Informatique à l’EMIT</a></td>
+                </tr>
+                <tr>
+                    <td>2021 -2022</td>
+                    <td>2 <sup>éme</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT</td>
+                </tr>
+                <tr>
+                    <td>2019 - 2020</td>
+                    <td>1 <sup>ére</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT</td>
+                </tr>
+                <tr>
+                    <td>2018 - 2019</td>
+                    <td><a href="diplomeBacc.png">Diplôme BACC Série D</a></td>
+                </tr>
+            </table>
+        </div>
         <br>
-        <div><h2 id="Experiences">Experiences et pratique pendant l'etude</h2></div>
-        <div class="3em-annee">
-            <b>3 <sup>éme</sup> Année de licence (2022 -2023)</b>
-            <ul>
-                <li>
-                    Stage de réalisation pendant trois(3) mois. Le thémme de stage est : <a href="https://shorturl.at/xzQGx">"Conception et réalisation d’une application web de gestion des notes des élèves cas de CEG et LYCEE dans la Cisco VOHIBATO "</a> . La conception est en UML et réaliser en Laravel. 
-                    <a href="attestation -ANDRIANANDRASANA  Nomeniony Samuel-Cisco-VOHIBATO.pdf">Attestation de stage</a>
-                </li>
-                <li><a href="https://github.com/Nomeniony/GestiondeCaisseeee.git" target="_blank">Gestion de caisse</a> : réaliser an JSP. La code source de ce projet est disponible sur</li> 
-            </ul>
+        <div>
+            <h2 id="Experiences">Experiences et pratique pendant l'etude</h2>
+            <div class="3em-annee">
+                <b>3 <sup>éme</sup> Année de licence (2022 -2023)</b>
+                <ul>
+                    <li>
+                        Stage de réalisation pendant trois(3) mois. Le thémme de stage est : <a href="https://shorturl.at/xzQGx">"Conception et réalisation d’une application web de gestion des notes des élèves cas de CEG et LYCEE dans la Cisco VOHIBATO "</a> . La conception est en UML et réaliser en Laravel. 
+                        <a href="attestation -ANDRIANANDRASANA Nomeniony Samuel-Cisco-VOHIBATO.pdf">Attestation de stage</a>
+                    </li>
+                    <li><a href="https://github.com/Nomeniony/GestiondeCaisseeee.git" target="_blank">Gestion de caisse</a> : réaliser an JSP. La code source de ce projet est disponible sur</li> 
+                </ul>
+            </div>
+            <div class="2eme-anne">
+                <b>2 <sup>éme</sup> Année de licence (2021 -2022)</b>
+                <ul>
+                    <li>Gestion de caisse : réalisation en JSP</li>
+                    <li>Conception et réalisation d’une application de <a href="https://shorturl.at/3BMbA">gestion de viticulteur (ou vendage)</a> au cas de société Lazan’iBetsileo Isaha Fianarantsoa. La Conception est en MERISE et réalisation en PHP." </li>
+                    <li>Gestion d'étudiant : réaliser en PHP</li>
+                    <li>Gestion de location des matériels instrument musicaux :réaliser en Java</li>
+                </ul>
+            </div>
+            <div class="1ere-anne">
+                <b>1 <sup>ére</sup> Année de licence (2019 -2020)</b>
+                <ul>
+                    <li>Gestion de <a href="https://shorturl.at/gYl8E">vante des matériels instrument musicaux</a> :réaliser en Acces. </li>
+                </ul>
+            </div>
         </div>
-        <div class="2eme-anne">
-            <b>2 <sup>éme</sup> Année de licence (2021 -2022)</b>
-            <ul>
-                <li>Stage de réalisation pendant deux(2) mois. Le thémme de stage est : "Conception et réalisation d’une application de <a href="https://shorturl.at/3BMbA">gestion de viticulteur (ou vendage)</a> au cas de société Lazan’iBetsileo Isaha Fianarantsoa. La Conception est en MERISE et réalisation en PHP." </li>
-                <li>Gestion d'étudiant : réaliser en PHP</li>
-                <li>Gestion de location des matériels instrument musicaux :réaliser en Java</li>
-            </ul>
-        </div><div class="1ere-anne">
-        <b>1 <sup>ére</sup> Année de licence (2019 -2020)</b>
-        <ul>
-            <li>Gestion de <a href="https://shorturl.at/gYl8E">vante des matériels instrument musicaux</a> :réaliser en Acces. </li>
-        </ul>
-        </div>
-
         <br>
-        <div class="connaissance-languistuque" id="connaissance-languistuque"><h2 id="langue">Connaissances Languistiques</h2></div>
-        <table id="customers">
-            <tr>
-                <th></th>
-                <th>Français</th>
-                <th>Anglais</th>
-                <th>Malagasy</th>
-            </tr>
-            <tr>
-                <td>Lire</td>
-                <td>Bon</td>
-                <td>Moyen</td>
-                <td rowspan="3"><center><div class="langue-matrnel">Langue Maternelle</div></center></td>
-            </tr>
-            <tr>
-                <td>Ecrire</td>
-                <td>Bon</td>
-                <td>Moyen</td>
-            </tr>
-            <tr>
-                <td>Parler</td>
-                <td colspan="2">Moyen</td>
-                
-            </tr>
-        </table>
+        <div class="connaissance-languistuque" id="connaissance-languistuque">
+            <h2 id="langue">Connaissances Languistiques</h2>
+            <table id="customers">
+                <tr>
+                    <th></th>
+                    <th>Français</th>
+                    <th>Anglais</th>
+                    <th>Malagasy</th>
+                </tr>
+                <tr>
+                    <td>Lire</td>
+                    <td>Bon</td>
+                    <td>Moyen</td>
+                    <td rowspan="3"><center><div class="langue-matrnel">Langue Maternelle</div></center></td>
+                </tr>
+                <tr>
+                    <td>Ecrire</td>
+                    <td>Bon</td>
+                    <td>Moyen</td>
+                </tr>
+                <tr>
+                    <td>Parler</td>
+                    <td colspan="2">Moyen</td>
+                </tr>
+            </table>
+        </div>
         <br>
         <p><b><h2 id="parents">Situation de Parents</h2></b></p>
         <table id="customers">
@@ -223,14 +272,22 @@ body{
                 <td>RAKOTO Andrianasolo et de RAZAFIMAHATRATRA</td>
             </tr>
         </table>
-    </div><br>
+    </div>
+    <br>
     <footer>
         <table width="100%" border="0">
             <tr>
-                <td><div align="center"><marquee dir="ltr" id="ltr"> <span class="espace"><b>Etat actuelle : </b>Etudiant <b>M<sub>1</sub></b> à l'EMIT - FIANARANTSOA (301).</span><span class="espace"><b>Mention : </b>INFORMATIQUE </span><span class="espace"><b>Parcours : </b>M2I</span></marquee></td>
+                <td>
+                    <div align="center">
+                        <marquee dir="ltr" id="ltr">
+                            <span class="espace"><b>Etat actuelle : </b>Etudiant <b>M<sub>1</sub></b> à l'EMIT - FIANARANTSOA (301).</span>
+                            <span class="espace"><b>Mention : </b>INFORMATIQUE </span>
+                            <span class="espace"><b>Parcours : </b>M2I</span>
+                        </marquee>
+                    </div>
+                </td>
             </tr>
-          </table>
-        </table> 
+        </table>
     </footer>
 </body>
 </html>
