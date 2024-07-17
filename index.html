@@ -22,7 +22,21 @@
             25% { left: 200px; }
             75% { left: 0px; }
         }
-        h2 {
+        div #phrase_accroche{
+            font-size: 50px;
+            text-shadow: 1px 1px #00cc66;
+            animation: mymove 10s infinite;
+            font-family: serif;
+        }
+        @keyframes mymove{
+            
+            0%{opacity: 0%;}
+            25%{opacity: 25%;}
+            50%{opacity: 50%;}
+            75%{opacity: 75%;}
+            100%{opacity: 100%;}
+        }
+        h3 {
             font-size: 40px;
             font-family: serif;
         }
@@ -51,6 +65,11 @@
             background-color: #4CAF50;
             color: white;
         }
+        nav{
+            position: absolute;
+            left: 0%;
+            position: fixed;
+        }
         nav ul {
             list-style-type: none;
             margin: 0;
@@ -76,8 +95,16 @@
             background-color: #555;
             color: white;
         }
+        /* Icône de menu par défaut masquée sur les grands écrans */
+        .menu-icon {
+            display: none;
+        }
         span.espace {
             padding-right: 30%;
+        }
+        a.haut{
+            position: absolute;
+            right: 0%;
         }
         
         /* Styles pour les petits écrans */
@@ -85,16 +112,21 @@
             h1 b {
                 font-size: 40px;
             }
-            h2 {
+            h3 {
                 font-size: 20px;
+            }
+            nav{
+                padding-top: 50px;
+                position: absolute;
+                left: 0%;
             }
             nav ul {
                 display: none; /* Masquer le menu par défaut */
-                width: 100%;
+                width: 20%;
+                height: 90%;
+                position: fixed;
             }
-            nav ul li a {
-                padding: 12px 16px;
-            }
+            
             .mon-photos img {
                 float: none;
                 display: block;
@@ -106,19 +138,20 @@
             }
             .menu-icon {
                 display: block;
-                font-size: 30px;
+                font-size: 20px;
                 cursor: pointer;
-                padding: 10px;
-                background-color: #4CAF50;
-                color: white;
-                text-align: center;
+                color: rgb(22, 20, 20);
+                position: absolute;
+                left: 0%;
+                position: fixed;
             }
+            a.haut{
+            position: absolute;
+            right: 0%;
+        }
         }
         
-        /* Icône de menu par défaut masquée sur les grands écrans */
-        .menu-icon {
-            display: none;
-        }
+        
     </style>
     <script>
         function toggleMenu() {
@@ -130,7 +163,6 @@
 <body>
     <!-- Icône de menu pour les petits écrans -->
     <div class="menu-icon" onclick="toggleMenu()">☰ Menu</div>
-    
     <!-- Navigation -->
     <nav>
         <ul>
@@ -138,33 +170,47 @@
             <li><a href="#identite">Identité</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#formation">Formation et diplôme</a></li>
-            <li><a href="#Experiences">Experiences et pratique pendant l'etude</a></li>
+            <li><a href="#Experiences">Experiences et pratique</a></li>
+            <li><a href="#competence">Competence</a></li>
             <li><a href="#langue">Connaissances Languistiques</a></li>
-            <li><a href="#ltr">Bas</a></li>
+            <li><a href="#qualites">Qualités</a></li>
+            <li><a href="#divers">Divers</a></li>
+            <li><a href="#parents">Parents</a></li>
+            <li><a href="#ltr"><img src="bas_de_page.ico" width="20px" height="30px"></a></li>
         </ul>
     </nav>
     
     <!-- Contenu principal -->
     <div class="container" style="margin-left:25%;padding:1px 16px;">
-        <p><center><h1 id="titre"><b>CARTE DE VISITE</b></h1></center></p>
+        <p>
+            <center>
+            <table width="90%">
+                <th>
+                    <td><h1 id="titre"><b>CARTE DE VISITE</b></h1></td>
+                </th>
+            </table>
+            </center>
+        </p>
+        
         <div class="mon-photos">
             <img src="mon-photos.jpg" width="200" height="200" alt="" class="rounded">
         </div>
+        <p><center><h2><div id="phrase_accroche">Développeur Informatique</div></h2></center></p>
         <div class="identite">
-            <h2 id="identite">Identité</h2>
+            <h3 id="identite">Identité</h3>
             <div class="nom">Nom et Prénom : ANDRIANANDRASANA Nomeniony Samuël</div>
             <div class="naissance">Né le : 15 Août 1999 à FIANARANTSOA</div>
             <div class="nationalite">Nationalité : MALAGASY</div>
             <div class="situation-matrimonial">Situation Matrimonial : Célibataire</div>
         </div>
         <div class="contact">
-            <h2 id="contact">Contact</h2>
-            <div class="num-phon">Numéro de téléphone : +261 34 52 240 36 ou +261 32 61 506 38</div>
+            <h3 id="contact">Contact</h3>
+            <div class="num-phon">Numéro de téléphone : +261 34 52 240 36</div>
             <div class="watsapp">WatsApp : +261 34 52 240 36 <a href="https://wa.me/+261345224036"><button type="submit">Discuter sur WhatsApp</button></a></div>
             <div class="e-mail">E_mail : anomenionysamuel@gmail.com  <a href="mailto:anomenionysamuel@gmail.com?subject=Sujet de l'Email&body=Bonjour, ceci est le test d'email"><button type="submit">Envoyer un courrier</button></a></div>
         </div>
         <div class="formation">
-            <h2 id="formation">Formation et diplôme</h2>
+            <h3 id="formation">Formation et diplôme</h3>
             <table id="customers">
                 <tr>
                     <th>Année scolaire</th>
@@ -194,36 +240,45 @@
         </div>
         <br>
         <div>
-            <h2 id="Experiences">Experiences et pratique pendant l'etude</h2>
+            <h3 id="Experiences">Experiences et pratique pendant l'etude</h3>
             <div class="3em-annee">
                 <b>3 <sup>éme</sup> Année de licence (2022 -2023)</b>
                 <ul>
                     <li>
                         Stage de réalisation pendant trois(3) mois. Le thémme de stage est : <a href="https://shorturl.at/xzQGx">"Conception et réalisation d’une application web de gestion des notes des élèves cas de CEG et LYCEE dans la Cisco VOHIBATO "</a> . La conception est en UML et réaliser en Laravel. 
-                        <a href="attestation -ANDRIANANDRASANA Nomeniony Samuel-Cisco-VOHIBATO.pdf">Attestation de stage</a>
+                        <a href="attestation -ANDRIANANDRASANA  Nomeniony Samuel-Cisco-VOHIBATO.jpg">Attestation de stage</a>
                     </li>
-                    <li><a href="https://github.com/Nomeniony/GestiondeCaisseeee.git" target="_blank">Gestion de caisse</a> : réaliser an JSP. La code source de ce projet est disponible sur</li> 
+                    <li>Projet de réalisation d'une application de <a href="https://github.com/Nomeniony/GestiondeCaisseeee.git" target="_blank">Gestion de caisse</a> : réaliser an JSP.</li> 
                 </ul>
             </div>
             <div class="2eme-anne">
                 <b>2 <sup>éme</sup> Année de licence (2021 -2022)</b>
                 <ul>
-                    <li>Gestion de caisse : réalisation en JSP</li>
                     <li>Conception et réalisation d’une application de <a href="https://shorturl.at/3BMbA">gestion de viticulteur (ou vendage)</a> au cas de société Lazan’iBetsileo Isaha Fianarantsoa. La Conception est en MERISE et réalisation en PHP." </li>
-                    <li>Gestion d'étudiant : réaliser en PHP</li>
-                    <li>Gestion de location des matériels instrument musicaux :réaliser en Java</li>
+                    <li>Projet de réalisation d'une application de Gestion d'étudiant : réaliser en PHP</li>
+                    <li>Projet de réalisation d'une application de Gestion de location des matériels instrument musicaux :réaliser en Java</li>
                 </ul>
             </div>
             <div class="1ere-anne">
                 <b>1 <sup>ére</sup> Année de licence (2019 -2020)</b>
                 <ul>
-                    <li>Gestion de <a href="https://shorturl.at/gYl8E">vante des matériels instrument musicaux</a> :réaliser en Acces. </li>
+                    <li>Projet de réalisation d'une application de Gestion de <a href="https://shorturl.at/gYl8E">vante des matériels instrument musicaux</a> :réaliser en Acces. </li>
                 </ul>
             </div>
         </div>
         <br>
+        <div class="competence_en_informatique" id="competence_en_informatique">
+            <h3 id="competence">Competence en informatique</h3>
+            <div class="borotique"><b>Bureautique : </b>Word, Exel, Powerpoint, Publisher</div>
+            <div class="sgbd"><b>Système de gestion de Base de Donnée : </b>Access, MySQL</div>
+            <div class="langage_de_programation"><b>Langage de programation : </b>HTML, CSS, JavaScript,PHP, JSP</div>
+            <div class="methode_analise_et_conseption"><b>Méthode d'analyse et de conception : </b>Merise, UML</div>
+            <div class="reseau"><b>Réseau : </b>Théorique et utilisation de Cisco Packet Tracer</div>
+            <div class="internet"><b>Internet : </b> Bien</div>
+        </div>
+        <br>
         <div class="connaissance-languistuque" id="connaissance-languistuque">
-            <h2 id="langue">Connaissances Languistiques</h2>
+            <h3 id="langue">Connaissances Languistiques</h3>
             <table id="customers">
                 <tr>
                     <th></th>
@@ -248,8 +303,20 @@
                 </tr>
             </table>
         </div>
-        <br>
-        <p><b><h2 id="parents">Situation de Parents</h2></b></p>
+        <p><b><h3 id="qualites">Qualités</h3></b></p>
+        <ul>
+            <li>Honnête, Intègre, Flexible</li>
+            <li>Sérieux, Rigoureux, Volontaire</li>
+            <li>Goût du travail en équipe</li>
+        </ul>
+        <p><b><h3 id="divers">Divers</h3></b></p>
+        <ul>
+            <li>Loisir : Lecture, écoute musique</li>
+            <li>Sport : Foot Ball, Natation</li>
+            <li>Religion : Fiangonanan Loterana Malagasy</li>
+        </ul>
+
+        <p><b><h3 id="parents">Situation de Parents</h3></b></p>
         <table id="customers">
             <tr>
                 <th border="0"></th>
@@ -274,20 +341,23 @@
         </table>
     </div>
     <br>
-    <footer>
-        <table width="100%" border="0">
-            <tr>
-                <td>
-                    <div align="center">
-                        <marquee dir="ltr" id="ltr">
-                            <span class="espace"><b>Etat actuelle : </b>Etudiant <b>M<sub>1</sub></b> à l'EMIT - FIANARANTSOA (301).</span>
-                            <span class="espace"><b>Mention : </b>INFORMATIQUE </span>
-                            <span class="espace"><b>Parcours : </b>M2I</span>
-                        </marquee>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </footer>
+    <p>
+        <footer>
+            <table width="100%" border="0">
+                <tr>
+                    <td>
+                        <div align="center">
+                            <marquee dir="ltr" id="ltr">
+                                <span class="espace"><b>Etat actuelle : </b>Etudiant <b>M<sub>1</sub></b> à l'EMIT - FIANARANTSOA (301).</span>
+                                <span class="espace"><b>Mention : </b>INFORMATIQUE </span>
+                                <span class="espace"><b>Parcours : </b>M2I</span>
+                            </marquee>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </p>
+    <a class="haut" href="#titre"><img src="retour_en_haut.ico" alt="" width="20px" height="30px"></a>
 </body>
 </html>
