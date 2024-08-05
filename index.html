@@ -27,14 +27,15 @@
             text-shadow: 1px 1px #00cc66;
             animation: mymove 10s infinite;
             font-family: serif;
+            position: relative;
+    animation-iteration-count: infinite;
         }
         @keyframes mymove{
-            
-            0%{opacity: 0%;}
-            25%{opacity: 25%;}
-            50%{opacity: 50%;}
-            75%{opacity: 75%;}
-            100%{opacity: 100%;}
+            0% { opacity: 1; }       /* 100% opaque */
+            25% { opacity: 0.5; }    /* 50% opaque */
+            50% { opacity: 0; }      /* 0% opaque (completely transparent) */
+            75% { opacity: 0.5; }    /* 50% opaque */
+            100% { opacity: 1; }     /* 100% opaque */
         }
         h3 {
             font-size: 40px;
@@ -150,7 +151,9 @@
             right: 0%;
         }
         }
-        
+        a {
+            text-decoration: none;
+        }
         
     </style>
     <script>
@@ -170,6 +173,7 @@
             <li><a href="#identite">Identité</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#formation">Formation et diplôme</a></li>
+            <li><a href="#certificat">Certificats</a></li>
             <li><a href="#Experiences">Experiences et pratique</a></li>
             <li><a href="#competence">Competence</a></li>
             <li><a href="#langue">Connaissances Languistiques</a></li>
@@ -207,14 +211,14 @@
             <h3 id="contact">Contact</h3>
             <div class="num-phon">Numéro de téléphone : +261 34 52 240 36</div>
             <div class="watsapp">WatsApp : +261 34 52 240 36 <a href="https://wa.me/+261345224036"><button type="submit">Discuter sur WhatsApp</button></a></div>
-            <div class="e-mail">E_mail : anomenionysamuel@gmail.com  <a href="mailto:anomenionysamuel@gmail.com?subject=Sujet de l'Email&body=Bonjour, ceci est le test d'email"><button type="submit">Envoyer un courrier</button></a></div>
+            <div class="e-mail">E_mail : anomenionysamuel@gmail.com  <a href="mailto:anomenionysamuel@gmail.com?subject=Sujet de l'Email&body=Bonjour Nomeniony."><button type="submit">Envoyer un courrier</button></a></div>
         </div>
         <div class="formation">
             <h3 id="formation">FORMATIONS ET DIPLÔMES</h3>
             <table id="customers">
                 <tr>
                     <th>Année scolaire</th>
-                    <th>Diplôme et attestation obtenue</th>
+                    <th>Formation et Diplôme obtenue</th>
                 </tr>
                 <tr>
                     <td>2023 - 2024</td>
@@ -223,10 +227,6 @@
                 <tr>
                     <td>2022 -2023</td>
                     <td><a href="diplome-licence.jpg">Diplôme Licence Professionnel en Informatique à l’EMIT</a></td>
-                </tr>
-                <tr>
-                    <td>19/06/2023 - 19/08/2023</td>
-                    <td><a href="attestation -ANDRIANANDRASANA  Nomeniony Samuel-Cisco-VOHIBATO.jpg">Attestation de stage dans la Cisco VOHIBATO</a></td>
                 </tr>
                 <tr>
                     <td>2021 -2022</td>
@@ -242,18 +242,23 @@
                 </tr>
             </table>
         </div>
+        <div class="certificat">
+            <h3 id="certificat">CERTIFICATS OBTENUS</h3>
+            <table id="customers">
+                <tr>
+                    <th>Année</th>
+                    <th>attestation obtenue</th>
+                </tr>
+                <tr>
+                    <td>2023</td>
+                    <td><a href="attestation -ANDRIANANDRASANA  Nomeniony Samuel-Cisco-VOHIBATO.jpg">Attestation de stage dans la Cisco VOHIBATO</a></td>
+                </tr>
+            </table>
+        </div>
         <br>
         <div>
             <h3 id="Experiences">Experiences et pratique pendant l'etude</h3>
-            <div class="4eme-anne">
-                <b>M<sub>1</sub> (2023-2024)</b>
-                <ul>
-                    <li>
-                        Création et déploiement du formulaire dans KoboToolbox
-                    </li>
-                    <li>Traitement de donnée sue XLSTAT</li>
-                </ul>
-            </div>
+            
             <div class="3em-annee">
                 <b>3 <sup>éme</sup> Année de licence (2022 -2023)</b>
                 <ul>
@@ -280,13 +285,16 @@
         </div>
         <br>
         <div class="competence_en_informatique" id="competence_en_informatique">
-            <h3 id="competence">COMPETENCES EN INFORMATIQUE</h3>
-            <div class="borotique"><b>Bureautique : </b>Word, Exel, Powerpoint, Publisher</div>
+            <h3 id="competence">COMPETENCES EN INFORMATIQUES</h3>
+            <div class="borotique"><b>Bureautique : </b>Word, Exel, Powerpoint, Publisher,Traitement de donnée sur XLSTAT</div>
             <div class="sgbd"><b>Système de gestion de Base de Donnée : </b>Access, MySQL</div>
             <div class="langage_de_programation"><b>Langage de programation : </b>HTML, CSS, JavaScript,PHP, JSP</div>
             <div class="methode_analise_et_conseption"><b>Méthode d'analyse et de conception : </b>Merise, UML</div>
             <div class="reseau"><b>Réseau : </b>Théorique et utilisation de Cisco Packet Tracer</div>
             <div class="internet"><b>Internet : </b> Bien</div>
+            <div class="divers">
+                Création et déploiement du formulaire dans KoboToolbox
+            </div>
         </div>
         <br>
         <div class="connaissance-languistuque" id="connaissance-languistuque">
