@@ -107,7 +107,12 @@
             position: absolute;
             right: 0%;
         }
-        
+        .espaces{
+            letter-spacing: 3px;
+        }
+        a {
+                text-decoration: none;
+            }
         /* Styles pour les petits écrans */
         @media only screen and (max-width: 720px) {
             h1 b {
@@ -151,20 +156,12 @@
             right: 0%;
         }
         }
-        a {
-            text-decoration: none;
-        }
         .bas_de_page{
             float: top;
         }
         
     </style>
-    <script>
-        function toggleMenu() {
-            var nav = document.querySelector('nav ul');
-            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+    
 </head>
 <body>
     <!-- Icône de menu pour les petits écrans -->
@@ -227,49 +224,47 @@
                 </tr>
                 <tr>
                     <td>2024 - 2025</td>
-                    <td>2 <sup>ème</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT</td>
+                    <td>
+                        <a href="M2.html">
+                            2 <sup>ème</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>2023 - 2024</td>
                     <td>1 <sup>ère</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT</td>
                 </tr>
                 <tr>
-                    <td>2022 -2023</td>
+                    <td>2022 - 2023</td>
                     <td>
-                        <a href="diplome-licence.jpg">Diplôme Licence Professionnel en Informatique à l’EMIT</a>
-                        <br>
-                        <a href="Attestation - L3 - EMIT.jpg">Attestation</a>
-                        <br>
-                        <a href="Releve de note - L3 - emit.jpg">Relevé de note</a>
+                        <a href="L3.html">Licence Professionnel en Informatique à l’EMIT</a>
                     </td>
                     
                 </tr>
                 <tr>
                     <td>2021 -2022</td>
                     <td>
-                        2 <sup>éme</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT
-                        <br>
-                        <a href="Attestation - L2 - EMIT.jpg">Attestation</a>
-                        <br>
-                        <a href="Releve de note - L2 - emit.jpg">Relevé de note</a>
+                        <a href="L2.html">
+                            2 <sup>éme</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT
+                        </a>
                     </td>
                 </tr>
                 <tr>
                     <td>2019 - 2020</td>
                     <td>
-                        1 <sup>ére</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT
-                        <br>
-                        <a href="Releve de note L1 - emit.jpg">Relevé de note</a>
+                        <a href="L1.html">
+                            1 <sup>ére</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT
+                        </a>
                     </td>
                 </tr>
                 <tr>
                     <td>2018 - 2019</td>
-                    <td><a href="diplomeBacc.png">Diplôme BACC Série D</a></td>
+                    <td><a href="bacc.html">BACC Série D</a></td>
                 </tr>
             </table>
         </div>
         <div class="certificat">
-            <h3 id="certificat">CERTIFICATS OBTENUS</h3>
+            <h3 id="certificat">CERTIFICAT OBTENUE</h3>
             <table id="customers">
                 <tr>
                     <th>Année</th>
@@ -314,8 +309,10 @@
             <h3 id="competence">COMPETENCES EN INFORMATIQUES</h3>
             <div class="borotique"><b>Bureautique : </b>Word, Exel, Powerpoint, Publisher,Traitement de donnée sur XLSTAT</div>
             <div class="sgbd"><b>Système de gestion de Base de Donnée : </b>Access, MySQL</div>
-            <div class="langage_de_programation"><b>Langage de programation : </b>HTML, CSS, JavaScript,PHP, JSP</div>
+            <div class="sgbd"><b>Programation Web : </b>HTML, CSS</div>
+            <div class="langage_de_programation"><b>Langage de programation : </b>JavaScript,PHP, JAVA</div>
             <div class="methode_analise_et_conseption"><b>Méthode d'analyse et de conception : </b>Merise, UML</div>
+            <div class="systeme"><b>Système</b> : Connaissances generals surtout sous windows et Linux</div>
             <div class="reseau"><b>Réseau : </b>Théorique et utilisation de Cisco Packet Tracer</div>
             <div class="internet"><b>Internet : </b> Bien</div>
             <div class="divers">
@@ -345,7 +342,7 @@
                 </tr>
                 <tr>
                     <td>Parler</td>
-                    <td colspan="2">Moyen</td>
+                    <td colspan="2"><div class="espaces"><center>Moyen</center></div></td>
                 </tr>
             </table>
         </div>
