@@ -159,6 +159,22 @@
         .bas_de_page{
             float: top;
         }
+        #impresson{
+            border: none;
+        }
+        @media print{
+        body *{
+            visibility: hidden;
+        }
+        .dotted, .dotted *{
+            visibility: visible;
+        }
+        .dotted{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
         
     </style>
     
@@ -180,7 +196,8 @@
             <li><a href="#qualites">Qualités</a></li>
             <li><a href="#divers">Divers</a></li>
             <li><a href="#parents">Parents</a></li>
-            <div class="bas_de_page"><a href="#ltr"><img src="bas_de_page.ico" width="20px" height="30px"></a></div>
+            <li><a><button id='impresson' name='impression' onclick='imprimer_page()' class="btn btn-secondary" title="Imprimer"> Exporter en pdf</button></a></li>
+            <li><div class="bas_de_page"><a href="#ltr"><img src="bas_de_page.ico" width="20px" height="30px"></a></div></li>
         </ul>
     </nav>
     
@@ -199,166 +216,171 @@
         <div class="mon-photos">
             <img src="mon-photos.jpg" width="200" height="200" alt="" class="rounded">
         </div>
-        <p><center><h2><div id="phrase_accroche">Développeur Informatique</div></h2></center></p>
-        <div class="identite">
-            <h3 id="identite">Identité</h3>
-            <div class="nom">Nom et Prénom : ANDRIANANDRASANA Nomeniony Samuël</div>
-            <div class="naissance">Né le : 15 Août 1999 à FIANARANTSOA</div>
-            <div class="nationalite">Nationalité : MALAGASY</div>
-            <div class="situation-matrimonial">Situation Matrimonial : Célibataire</div>
-        </div>
-        <div class="contact">
-            <h3 id="contact">Contact</h3>
-            <div class="num-phon">Numéro de téléphone : +261 34 52 240 36</div>
-            <div class="watsapp">WhatsApp : +261 34 52 240 36 <a href="https://wa.me/+261345224036"><button type="submit">Discuter sur WhatsApp</button></a></div>
-            <div class="e-mail">E_mail : anomenionysamuel@gmail.com  <a href="mailto:anomenionysamuel@gmail.com?subject=Sujet de l'Email&body=Bonjour Nomeniony."><button type="submit">Envoyer un courrier</button></a></div>
-            <div class="skype">Skype : anomenionysamuel@gmail.com </div>
-            <div class="Microssoft">Microssoft : anomenionysamuel@gmail.com </div>
-        </div>
-        <div class="formation">
-            <h3 id="formation">FORMATIONS ET DIPLÔMES</h3>
-            <table id="customers">
-                <tr>
-                    <th>Année scolaire</th>
-                    <th>Formation et Diplôme obtenue</th>
-                </tr>
-                <tr>
-                    <td>2024 - 2025</td>
-                    <td>
-                        <a href="M2.html">
-                            2 <sup>ème</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2023 - 2024</td>
-                    <td>1 <sup>ère</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT</td>
-                </tr>
-                <tr>
-                    <td>2022 - 2023</td>
-                    <td>
-                        <a href="L3.html">Licence Professionnel en Informatique à l’EMIT</a>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>2021 -2022</td>
-                    <td>
-                        <a href="L2.html">
-                            2 <sup>éme</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2019 - 2020</td>
-                    <td>
-                        <a href="L1.html">
-                            1 <sup>ére</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2018 - 2019</td>
-                    <td><a href="bacc.html">BACC Série D</a></td>
-                </tr>
-            </table>
-        </div>
-        <div class="certificat">
-            <h3 id="certificat">CERTIFICAT OBTENUE</h3>
-            <table id="customers">
-                <tr>
-                    <th>Année</th>
-                    <th>attestation obtenue</th>
-                </tr>
-                <tr>
-                    <td>2023</td>
-                    <td><a href="attestation -ANDRIANANDRASANA  Nomeniony Samuel-Cisco-VOHIBATO.jpg">Attestation de stage dans la Cisco VOHIBATO</a></td>
-                </tr>
-            </table>
-        </div>
-        <br>
-        <div>
-            <h3 id="Experiences">Experiences et pratique pendant l'etude</h3>
-            
-            <div class="3em-annee">
-                <b>3 <sup>éme</sup> Année de licence (2022 -2023)</b>
-                <ul>
-                    <li>
-                        Stage de réalisation pendant trois(3) mois. Le thémme de stage est : <a href="https://shorturl.at/xzQGx">"Conception et réalisation d’une application web de gestion des notes des élèves cas de CEG et LYCEE dans la Cisco VOHIBATO "</a> . La conception est en UML et réaliser en Laravel. 
-                    </li>
-                    <li>Projet de réalisation d'une application de <a href="https://github.com/Nomeniony/GestiondeCaisseeee.git" target="_blank">Gestion de caisse</a> : réaliser an JSP.</li> 
-                </ul>
+        <div class="dotted">
+            <p><center><h2><div id="phrase_accroche">Développeur Informatique</div></h2></center></p>
+            <div class="identite">
+                <h3 id="identite">Identité</h3>
+                <div class="nom">Nom et Prénom : ANDRIANANDRASANA Nomeniony Samuël</div>
+                <div class="naissance">Né le : 15 Août 1999 à FIANARANTSOA</div>
+                <div class="nationalite">Nationalité : MALAGASY</div>
+                <div class="situation-matrimonial">Situation Matrimonial : Célibataire</div>
             </div>
-            <div class="2eme-anne">
-                <b>2 <sup>éme</sup> Année de licence (2021 -2022)</b>
-                <ul>
-                    <li>Conception et réalisation d’une application de <a href="https://shorturl.at/3BMbA">gestion de viticulteur (ou vendage)</a> au cas de société Lazan’iBetsileo Isaha Fianarantsoa. La Conception est en MERISE et réalisation en PHP." </li>
-                    <li>Projet de réalisation d'une application de Gestion d'étudiant : réaliser en PHP</li>
-                    <li>Projet de réalisation d'une application de Gestion de location des matériels instrument musicaux :réaliser en Java</li>
-                </ul>
+            <div class="contact">
+                <h3 id="contact">Contact</h3>
+                <div class="num-phon">Numéro de téléphone : +261 34 52 240 36</div>
+                <div class="watsapp">WhatsApp : +261 34 52 240 36 <a href="https://wa.me/+261345224036"><button type="submit">Discuter sur WhatsApp</button></a></div>
+                <div class="e-mail">E_mail : anomenionysamuel@gmail.com  <a href="mailto:anomenionysamuel@gmail.com?subject=Sujet de l'Email&body=Bonjour Nomeniony."><button type="submit">Envoyer un courrier</button></a></div>
+                <div class="skype">Skype : anomenionysamuel@gmail.com </div>
+                <div class="Microssoft">Microssoft : anomenionysamuel@gmail.com </div>
             </div>
-            <div class="1ere-anne">
-                <b>1 <sup>ére</sup> Année de licence (2019 -2020)</b>
-                <ul>
-                    <li>Projet de réalisation d'une application de Gestion de <a href="https://shorturl.at/gYl8E">vante des matériels instrument musicaux</a> :réaliser en Acces. </li>
-                </ul>
-            </div>
-        </div>
-        <br>
-        <div class="competence_en_informatique" id="competence_en_informatique">
-            <h3 id="competence">COMPETENCES EN INFORMATIQUES</h3>
-            <div class="borotique"><b>Bureautique : </b>Word, Exel, Powerpoint, Publisher,Traitement de donnée sur XLSTAT</div>
-            <div class="sgbd"><b>Système de gestion de Base de Donnée : </b>Access, MySQL</div>
-            <div class="sgbd"><b>Programation Web : </b>HTML, CSS</div>
-            <div class="langage_de_programation"><b>Langage de programation : </b>JavaScript,PHP, JAVA</div>
-            <div class="methode_analise_et_conseption"><b>Méthode d'analyse et de conception : </b>Merise, UML</div>
-            <div class="systeme"><b>Système</b> : Connaissances generals surtout sous windows et Linux</div>
-            <div class="reseau"><b>Réseau : </b>Théorique et utilisation de Cisco Packet Tracer</div>
-            <div class="internet"><b>Internet : </b> Bien</div>
-            <div class="divers">
-                Création et déploiement du formulaire dans KoboToolbox
-            </div>
-        </div>
-        <br>
-        <div class="connaissance-languistuque" id="connaissance-languistuque">
-            <h3 id="langue">Connaissances Languistiques</h3>
-            <table id="customers">
-                <tr>
-                    <th></th>
-                    <th>Français</th>
-                    <th>Anglais</th>
-                    <th>Malagasy</th>
-                </tr>
-                <tr>
-                    <td>Lire</td>
-                    <td>Bon</td>
-                    <td>Moyen</td>
-                    <td rowspan="3"><center><div class="langue-matrnel">Langue Maternelle</div></center></td>
-                </tr>
-                <tr>
-                    <td>Ecrire</td>
-                    <td>Bon</td>
-                    <td>Moyen</td>
-                </tr>
-                <tr>
-                    <td>Parler</td>
-                    <td colspan="2"><div class="espaces"><center>Moyen</center></div></td>
-                </tr>
-            </table>
-        </div>
-        <p><b><h3 id="qualites">Qualités</h3></b></p>
-        <ul>
-            <li>Honnête, Intègre, Flexible</li>
-            <li>Sérieux, Rigoureux, Volontaire</li>
-            <li>Goût du travail en équipe</li>
-        </ul>
-        <p><b><h3 id="divers">Divers</h3></b></p>
-        <ul>
-            <li>Loisir : Lecture, écoute musique</li>
-            <li>Sport : Foot Ball, Natation</li>
-            <li>Religion : Fiangonanan Loterana Malagasy</li>
-        </ul>
+            <div class="formation">
+                <h3 id="formation">FORMATIONS ET DIPLÔMES</h3>
+                <table id="customers">
+                    <tr>
+                        <th>Année scolaire</th>
+                        <th>Formation et Diplôme obtenue</th>
+                    </tr>
+                    <tr>
+                        <td>2024 - 2025</td>
+                        <td>
+                            <a href="M2.html">
+                                2 <sup>ème</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2023 - 2024</td>
+                        <td>1 <sup>ère</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT</td>
+                    </tr>
+                    <tr>
+                        <td>2022 - 2023</td>
+                        <td>
+                            <a href="L3.html">Licence Professionnel en Informatique à l’EMIT</a>
+                        </td>
 
+                    </tr>
+                    <tr>
+                        <td>2021 -2022</td>
+                        <td>
+                            <a href="L2.html">
+                                2 <sup>éme</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2019 - 2020</td>
+                        <td>
+                            <a href="L1.html">
+                                1 <sup>ére</sup> Année de licence en développement d'application Internet-Intranet à l'EMIT
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2018 - 2019</td>
+                        <td><a href="bacc.html">BACC Série D</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="certificat">
+                <h3 id="certificat">CERTIFICAT OBTENUE</h3>
+                <table id="customers">
+                    <tr>
+                        <th>Année</th>
+                        <th>attestation obtenue</th>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td><a href="attestation -ANDRIANANDRASANA  Nomeniony Samuel-Cisco-VOHIBATO.jpg">Attestation de stage dans la Cisco VOHIBATO</a></td>
+                    </tr>
+                    <tr>
+                        <td>2025</td>
+                        <td><a href="pharo.jpg">Attestation de participation au cours "Advanced Object-Oriented Design in Pharo"</a></td> 
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div>
+                <h3 id="Experiences">Experiences et pratique pendant l'etude</h3>
+
+                <div class="3em-annee">
+                    <b>3 <sup>éme</sup> Année de licence (2022 -2023)</b>
+                    <ul>
+                        <li>
+                            Stage de réalisation pendant trois(3) mois. Le thémme de stage est : <a href="https://shorturl.at/xzQGx">"Conception et réalisation d’une application web de gestion des notes des élèves cas de CEG et LYCEE dans la Cisco VOHIBATO "</a> . La conception est en UML et réaliser en Laravel. 
+                        </li>
+                        <li>Projet de réalisation d'une application de <a href="https://github.com/Nomeniony/GestiondeCaisseeee.git" target="_blank">Gestion de caisse</a> : réaliser an JSP.</li> 
+                    </ul>
+                </div>
+                <div class="2eme-anne">
+                    <b>2 <sup>éme</sup> Année de licence (2021 -2022)</b>
+                    <ul>
+                        <li>Conception et réalisation d’une application de <a href="https://shorturl.at/3BMbA">gestion de viticulteur (ou vendage)</a> au cas de société Lazan’iBetsileo Isaha Fianarantsoa. La Conception est en MERISE et réalisation en PHP." </li>
+                        <li>Projet de réalisation d'une application de Gestion d'étudiant : réaliser en PHP</li>
+                        <li>Projet de réalisation d'une application de Gestion de location des matériels instrument musicaux :réaliser en Java</li>
+                    </ul>
+                </div>
+                <div class="1ere-anne">
+                    <b>1 <sup>ére</sup> Année de licence (2019 -2020)</b>
+                    <ul>
+                        <li>Projet de réalisation d'une application de Gestion de <a href="https://shorturl.at/gYl8E">vante des matériels instrument musicaux</a> :réaliser en Acces. </li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="competence_en_informatique" id="competence_en_informatique">
+                <h3 id="competence">COMPETENCES EN INFORMATIQUES</h3>
+                <div class="borotique"><b>Bureautique : </b>Word, Exel, Powerpoint, Publisher,Traitement de donnée sur XLSTAT</div>
+                <div class="sgbd"><b>Système de gestion de Base de Donnée : </b>Access, MySQL</div>
+                <div class="sgbd"><b>Programation Web : </b>HTML, CSS</div>
+                <div class="langage_de_programation"><b>Langage de programation : </b>JavaScript,PHP, JAVA</div>
+                <div class="methode_analise_et_conseption"><b>Méthode d'analyse et de conception : </b>Merise, UML</div>
+                <div class="systeme"><b>Système</b> : Connaissances generals surtout sous windows et Linux</div>
+                <div class="reseau"><b>Réseau : </b>Théorique et utilisation de Cisco Packet Tracer</div>
+                <div class="internet"><b>Internet : </b> Bien</div>
+                <div class="divers">
+                    <b>Collecte de  donnée : </b>Création et déploiement du formulaire dans KoboToolbox et leurs utilisations
+                </div>
+            </div>
+            <br>
+            <div class="connaissance-languistuque" id="connaissance-languistuque">
+                <h3 id="langue">Connaissances Languistiques</h3>
+                <table id="customers">
+                    <tr>
+                        <th></th>
+                        <th>Français</th>
+                        <th>Anglais</th>
+                        <th>Malagasy</th>
+                    </tr>
+                    <tr>
+                        <td>Lire</td>
+                        <td>Bon</td>
+                        <td>Moyen</td>
+                        <td rowspan="3"><center><div class="langue-matrnel">Langue Maternelle</div></center></td>
+                    </tr>
+                    <tr>
+                        <td>Ecrire</td>
+                        <td>Bon</td>
+                        <td>Moyen</td>
+                    </tr>
+                    <tr>
+                        <td>Parler</td>
+                        <td colspan="2"><div class="espaces"><center>Moyen</center></div></td>
+                    </tr>
+                </table>
+            </div>
+            <p><b><h3 id="qualites">Qualités</h3></b></p>
+            <ul>
+                <li>Honnête, Intègre, Flexible</li>
+                <li>Sérieux, Rigoureux, Volontaire</li>
+                <li>Goût du travail en équipe</li>
+            </ul>
+            <p><b><h3 id="divers">Divers</h3></b></p>
+            <ul>
+                <li>Loisir : Lecture, écoute musique</li>
+                <li>Sport : Foot Ball, Natation</li>
+                <li>Religion : Fiangonanan Loterana Malagasy</li>
+            </ul>
+        </div>
         <p><b><h3 id="parents">Situations des Parents</h3></b></p>
         <table id="customers">
             <tr>
@@ -382,6 +404,12 @@
                 <td>RAKOTO Andrianasolo et de RAZAFIMAHATRATRA</td>
             </tr>
         </table>
+        
+        <script>
+            function imprimer_page(){
+                window.print(document.getElementById='impri');
+            }
+        </script>
     </div>
     <br>
     <p>
