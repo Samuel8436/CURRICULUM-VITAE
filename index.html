@@ -170,13 +170,61 @@
         a {
             text-decoration: none;
         }
-        
+        .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: black;
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+          z-index: 1000;
+        }
+
+        .footer a {
+          color: white;
+          margin: 0 8px;
+          font-size: 20px;
+          text-decoration: none;
+          display: inline-block;
+          transition: color 0.3s, transform 0.3s;
+        }
+
+        .footer a:hover {
+          color: #00acee;
+          transform: scale(1.2);
+        }
+
+        @media (max-width: 600px) {
+          .footer a {
+            font-size: 18px;
+            margin: 0 6px;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .footer {
+            font-size: 14px;
+            padding: 8px 0;
+          }
+
+          .footer a {
+            font-size: 16px;
+            margin: 0 4px;
+          }
+        }
+        .footer a img {
+          width: 24px;
+          height: 24px;
+          vertical-align: middle;
+        }
     </style>
     <script>
         function toggleMenu() {
             var nav = document.querySelector('nav ul');
             var menuToggle = document.getElementById('menuToggle');
-        
+
             if (nav.style.display === 'block') {
                 nav.style.display = 'none';
                 menuToggle.innerHTML = '☰ Menu'; // menu fermé
@@ -246,12 +294,16 @@
                     <th>Formation et Diplôme obtenue</th>
                 </tr>
                 <tr>
+                    <td>2024 - 2025</td>
+                    <td>2 <sup>ère</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT</td>
+                </tr>
+                <tr>
                     <td>2023 - 2024</td>
                     <td>1 <sup>ère</sup> Année de Master en Modélisation Ingenieura Informatique (M2I) à l'EMIT</td>
                 </tr>
                 <tr>
                     <td>2022 -2023</td>
-                    <td><a href="diplome-licence.jpg">Diplôme Licence Professionnel en Informatique à l’EMIT</a></td>
+                    <td>Diplôme Licence Professionnel en Informatique à l’EMIT</td>
                 </tr>
                 <tr>
                     <td>2021 -2022</td>
@@ -263,7 +315,7 @@
                 </tr>
                 <tr>
                     <td>2018 - 2019</td>
-                    <td><a href="diplomeBacc.png">Diplôme BACC Série D</a></td>
+                    <td>Diplôme BACC Série D</td>
                 </tr>
             </table>
         </div>
@@ -275,8 +327,12 @@
                     <th>attestation obtenue</th>
                 </tr>
                 <tr>
-                    <td>2023</td>
-                    <td><a href="attestation -ANDRIANANDRASANA  Nomeniony Samuel-Cisco-VOHIBATO.jpg">Attestation de stage dans la Cisco VOHIBATO</a></td>
+                    <td>Juin - 19 Septembre 2023</td>
+                    <td>Attestation de stage dans la Cisco VOHIBATO</td>
+                </tr>
+                <tr>
+                    <td>24 - 30 Avril 2025</td>
+                    <td>Attestation de participation à la formation Conception orientée objet avancée dans Pharo</td>
                 </tr>
             </table>
         </div>
@@ -401,6 +457,15 @@
                     </td>
                 </tr>
             </table>
+            <div class="footer">
+              <a href="https://www.facebook.com/photo/?fbid=122179853582040784&set=a.122138741198040784" target="_blank"><i class="fab fa-facebook-f"><img src="favebook.png" alt=""></i></a>
+              <a href="#" target="_blank"><i class="fab fa-instagram"><img src="instagram.jfif" alt=""></i></a>
+              <a href="https://linkedin.com/in/tonprofil" target="_blank"><i class="fab fa-linkedin-in"><img src="linke dine.png" alt=""></i></a>
+              <a href="https://tiktok.com/@tonprofil" target="_blank"><i class="fab fa-tiktok"><img src="tiktok.png" alt=""></i></a>
+              <a href="https://t.me/tonprofil" target="_blank"><i class="fab fa-telegram-plane"><img src="telegram.png" alt=""></i></a>
+              <a href="https://wa.me/261341234567" target="_blank"><i class="fab fa-whatsapp"><img src="whatsapp.jfif" alt=""></i></a>
+              <a href="mailto:tonemail@example.com"><i class="fas fa-envelope"><img src="gmail.png" alt=""></i></a>
+            </div>
         </footer>
     </p>
     <a class="haut" href="#titre"><img src="retour_en_haut.ico" alt="" width="20px" height="30px"></a>
