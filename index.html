@@ -116,16 +116,29 @@
             h3 {
                 font-size: 20px;
             }
-            nav{
-                padding-top: 50px;
-                position: absolute;
-                left: 0%;
+            nav {
+                top: 0;
+                left: 0;
+                width: 100%;
+                position: fixed;
+                background-color: #f1f1f1;
+                z-index: 1000;
             }
             nav ul {
-                display: none; /* Masquer le menu par défaut */
-                width: 20%;
-                height: 90%;
-                position: fixed;
+                display: none;
+                width: 100%;
+                background-color: #f1f1f1;
+                position: static;
+                margin: 0;
+                padding: 0;
+            }
+            nav ul li {
+                display: inline-block;
+                width: auto;
+            }
+            nav ul li a {
+                display: inline-block;
+                padding: 10px;
             }
             
             .mon-photos img {
@@ -142,9 +155,12 @@
                 font-size: 20px;
                 cursor: pointer;
                 color: rgb(22, 20, 20);
-                position: absolute;
-                left: 0%;
                 position: fixed;
+                top: 0;
+                left: 0;
+                padding: 10px;
+                background-color: #f1f1f1;
+                z-index: 1001;
             }
             a.haut{
             position: absolute;
@@ -159,13 +175,22 @@
     <script>
         function toggleMenu() {
             var nav = document.querySelector('nav ul');
-            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+            var menuToggle = document.getElementById('menuToggle');
+        
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+                menuToggle.innerHTML = '☰ Menu'; // menu fermé
+            } else {
+                nav.style.display = 'block';
+                menuToggle.innerHTML = '✖ Fermer'; // menu ouvert
+            }
         }
     </script>
+
 </head>
 <body>
     <!-- Icône de menu pour les petits écrans -->
-    <div class="menu-icon" onclick="toggleMenu()">☰ Menu</div>
+     <div class="menu-icon" onclick="toggleMenu()" id="menuToggle">☰ Menu</div>
     <!-- Navigation -->
     <nav>
         <ul>
